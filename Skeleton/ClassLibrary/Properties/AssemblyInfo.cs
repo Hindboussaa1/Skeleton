@@ -34,3 +34,20 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+
+namespace ClassLibrary
+{
+    public class clsCustomer
+    {
+        public int Name { get; set; }
+        public int CustomerID { get; set; }
+        public string Email { get; set; }
+        public int Phone { get; set; }
+        public string Address { get; set; }
+        public int Numberofcustomerhandled { get; set; }
+    }
+
+    public class clsCustome
+    {
+    }
+}
