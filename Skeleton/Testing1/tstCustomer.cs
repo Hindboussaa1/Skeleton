@@ -7,17 +7,15 @@ namespace Testing1
     [TestClass]
     public class tstCustomer
     {
-        private string hindamingmailcom;
         private string roadmayflower;
-        private int numberofcustomerhandled;
 
-        public int Numberofcustomerhandled { get => numberofcustomerhandled; private set => numberofcustomerhandled = value; }
         public string Address { get; private set; }
-        public int Phone { get; private set; }
         public string Email { get; private set; }
         public int CustomerID { get; private set; }
         public int Name { get; private set; }
+        public string Roadmayflower { get => roadmayflower; set => roadmayflower = value; }
 
+        public string Hindamingmailcom { get; }
 
         [TestMethod]
         public void Instanceok()
@@ -63,7 +61,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsCustomer customer = new clsCustomer();
             //create some test data to assign to the property
-            String TestData = hindamingmailcom;
+            String TestData = Hindamingmailcom;
             //assign the data to the property
             customer.Email = TestData;
             //test to see that the two values are the same
@@ -71,18 +69,7 @@ namespace Testing1
         }
 
 
-        [TestMethod]
-        public void PhoneOK()
-        {
-            //create an instance of the class we want to create
-            clsCustomer customer = new clsCustomer();
-            //create some test data to assign to the property
-            Int32 TestData = 1564367;
-            //assign the data to the property
-            customer.Phone = TestData;
-            //test to see that the two values are the same
-            Assert.AreEqual(customer.Phone, TestData);
-        }
+
 
         [TestMethod]
         public void AddressOK()
@@ -90,7 +77,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsCustomer customer = new clsCustomer();
             //create some test data to assign to the property
-            String TestData = roadmayflower;
+            String TestData = Roadmayflower;
             //assign the data to the property
             customer.Address = TestData;
             //test to see that the two values are the same
@@ -98,17 +85,30 @@ namespace Testing1
         }
 
         [TestMethod]
-        public void NumberofcustomerhandledOK()
+        public void DateOK()
         {
             //create an instance of the class we want to create
             clsCustomer customer = new clsCustomer();
             //create some test data to assign to the property
-            Int32 TestData = 54;
+          DateTime TestData = DateTime.Now.Date;
             //assign the data to the property
-            customer.Numberofcustomerhandled = TestData;
+            customer.Date = TestData;
             //test to see that the two values are the same
-            Assert.AreEqual(customer.Numberofcustomerhandled, TestData);
+            Assert.AreEqual(expected: customer.Date, TestData);
         }
+        [TestMethod]
+        public void CustomerActiveOk()
+        {
+            //create an instance of the class we want to create
+            clsCustomer customer = new clsCustomer();
+            //create some test data to assign to the property
+           Boolean TestData =  true;
+            //assign the data to the property
+            customer.CustomerActive = TestData;
+            //test to see that the two values are the same
+            Assert.AreEqual(customer.CustomerActive, TestData);
+        }
+
     }
 }
     
