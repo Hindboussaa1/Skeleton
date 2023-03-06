@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -45,6 +46,8 @@ namespace ClassLibrary
         public int Phone { get; set; }
         public string Address { get; set; }
         public int Numberofcustomerhandled { get; set; }
+        public DateTime Date { get; set; }
+        public bool CustomerActive { get; set; }
     }
 
     public class clsCustome
