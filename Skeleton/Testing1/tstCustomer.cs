@@ -7,6 +7,8 @@ namespace Testing1
     [TestClass]
     public class tstCustomer
     {
+        private const string V = "CustomerID";
+        private const string V1 = "Testname";
         private string roadmayflower;
 
         public string Address { get; private set; }
@@ -16,6 +18,7 @@ namespace Testing1
         public string Roadmayflower { get => roadmayflower; set => roadmayflower = value; }
 
         public string Hindamingmailcom { get; }
+        public bool Found { get; private set; }
 
         [TestMethod]
         public void Instanceok()
@@ -108,6 +111,26 @@ namespace Testing1
             //test to see that the two values are the same
             Assert.AreEqual(customer.CustomerActive, TestData);
         }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsCustomer customer = new clsCustomer();
+            //Boolean variable to store the results of the validation 
+            Boolean  found = false;
+            //create some test data to assign to the property
+            Int32 CustomerID = 3;
+            //invoke the method
+            found = customer.Find(CustomerID);
+            //test to see that the two values are the same
+            Assert.IsTrue(Found);
+
+
+
+        }
+       
+
 
     }
 }

@@ -48,6 +48,11 @@ namespace ClassLibrary
         public int Numberofcustomerhandled { get; set; }
         public DateTime Date { get; set; }
         public bool CustomerActive { get; set; }
+
+        public bool Find(int customerID)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class clsCustome

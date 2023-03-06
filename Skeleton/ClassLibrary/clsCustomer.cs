@@ -1,6 +1,8 @@
-﻿namespace ClassLibrary
+﻿using System;
+using System.Diagnostics;
+
+namespace ClassLibrary
 {
-    public class clsCustomerr
-    {
-    }
+   
+
 }
