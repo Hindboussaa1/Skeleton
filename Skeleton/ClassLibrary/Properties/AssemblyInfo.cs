@@ -49,10 +49,7 @@ namespace ClassLibrary
         public DateTime Date { get; set; }
         public bool CustomerActive { get; set; }
 
-        public bool Find(int customerID)
-        {
-            throw new NotImplementedException();
-        }
+        public bool Find(int customerID) => throw new NotImplementedException();
     }
 
     public class clsCustome
