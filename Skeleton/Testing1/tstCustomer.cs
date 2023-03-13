@@ -7,17 +7,17 @@ namespace Testing1
     [TestClass]
     public class tstCustomer
     {
-        private const string V = "CustomerID";
-        private const string V1 = "Testname";
-        private string roadmayflower;
+        //private const string V = "CustomerID";
+        //private const string V1 = "Testname";
+        //private string = "roadmayflower";
 
         public string Address { get; private set; }
         public string Email { get; private set; }
-        public int CustomerID { get; private set; }
+        //public int CustomerID { get; private set; }
         public int Name { get; private set; }
-        public string Roadmayflower { get => roadmayflower; set => roadmayflower = value; }
+        //public string Roadmayflower { get = roadmayflower; set => roadmayflower = value; }
 
-        public string Hindamingmailcom { get; }
+        //public string Hindamingmailcom { get; }
         public bool Found { get; private set; }
 
         [TestMethod]
@@ -64,7 +64,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsCustomer customer = new clsCustomer();
             //create some test data to assign to the property
-            String TestData = Hindamingmailcom;
+            String TestData = "Hindamingmailcom";
             //assign the data to the property
             customer.Email = TestData;
             //test to see that the two values are the same
@@ -80,7 +80,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsCustomer customer = new clsCustomer();
             //create some test data to assign to the property
-            String TestData = Roadmayflower;
+            String TestData = "Roadmayflower";
             //assign the data to the property
             customer.Address = TestData;
             //test to see that the two values are the same
