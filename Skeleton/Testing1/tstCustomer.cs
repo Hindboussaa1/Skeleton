@@ -124,11 +124,11 @@ namespace Testing1
             //invoke the method
             found = customer.Find(CustomerID);
             //test to see that the two values are the same
-            Assert.IsTrue(Found);
-
+            Assert.IsTrue(found);
 
 
         }
+
        
 
 
