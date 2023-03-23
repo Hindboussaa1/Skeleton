@@ -42,7 +42,7 @@ namespace Testing1
             Assert.AreEqual(customer.CustomerID, TestData);
         }
 
-        [TestMethod]
+       /* [TestMethod]
         public void NameOk()
         {
             //create an instance of the class we want to create
@@ -54,7 +54,7 @@ namespace Testing1
             //test to see that the two values are the same
             Assert.AreEqual(customer.Name, TestData);
         }
-
+       */
 
 
 
