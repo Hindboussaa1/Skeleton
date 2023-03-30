@@ -42,19 +42,19 @@ namespace Testing1
             Assert.AreEqual(customer.CustomerID, TestData);
         }
 
-       /* [TestMethod]
-        public void NameOk()
-        {
-            //create an instance of the class we want to create
-            clsCustomer customer = new clsCustomer();
-            //create some test data to assign to the property
-            int TestData = 9;
-            //assign the data to the property
-            customer.Name = TestData;
-            //test to see that the two values are the same
-            Assert.AreEqual(customer.Name, TestData);
-        }
-       */
+        /* [TestMethod]
+         public void NameOk()
+         {
+             //create an instance of the class we want to create
+             clsCustomer customer = new clsCustomer();
+             //create some test data to assign to the property
+             int TestData = 9;
+             //assign the data to the property
+             customer.Name = TestData;
+             //test to see that the two values are the same
+             Assert.AreEqual(customer.Name, TestData);
+         }
+        */
 
 
 
@@ -93,7 +93,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsCustomer customer = new clsCustomer();
             //create some test data to assign to the property
-          DateTime TestData = DateTime.Now.Date;
+            DateTime TestData = DateTime.Now.Date;
             //assign the data to the property
             customer.Date = TestData;
             //test to see that the two values are the same
@@ -105,7 +105,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsCustomer customer = new clsCustomer();
             //create some test data to assign to the property
-           Boolean TestData =  true;
+            Boolean TestData = true;
             //assign the data to the property
             customer.CustomerActive = TestData;
             //test to see that the two values are the same
@@ -118,7 +118,7 @@ namespace Testing1
             //create an instance of the class we want to create
             clsCustomer customer = new clsCustomer();
             //Boolean variable to store the results of the validation 
-            Boolean  found = false;
+            Boolean found = false;
             //create some test data to assign to the property
             Int32 CustomerID = 3;
             //invoke the method
@@ -129,9 +129,25 @@ namespace Testing1
 
         }
 
-       
-
+        [TestMethod]
+        public void TestCustomerIDFound()
+        {
+            //create an instance of the class we want to create
+            clsCustomer customer = new clsCustomer();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean variable to record if data is ok
+            Boolean OK = true;
+            //create some test data to assign to the property
+            int CustomerID = 9;
+            //invoke the method
+            Found = customer.Find(CustomerID);
+            //check the  customerID
+            if (customer.CustomerID != 9)
+            {
+                OK = false;
+            }
 
     }
 }
-    
+
