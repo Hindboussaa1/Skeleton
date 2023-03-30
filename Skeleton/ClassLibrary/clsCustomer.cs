@@ -6,19 +6,46 @@ namespace ClassLibrary
 
     public class clsCustomer
     {
-        public string Name { get; set; }
-        public int CustomerID { get; set; }
-        public string Email { get; set; }
-        public int Phone { get; set; }
-        public string Address { get; set; }
-        public int Numberofcustomerhandled { get; set; }
-        public DateTime Date { get; set; }
-        public bool CustomerActive { get; set; }
+        private int mCustomerID;
+        private string mEmail;
+        private string mAddress;
+        private DateTime mDate;
+        private Boolean mCustomerActive;
 
-        public bool Find(int customerID)
+
+        public string Name { get; set; }
+        public int CustomerID
         {
-            return true;
+            get
+            {
+                return mCustomerID;
+            }
+            set
+            {
+                mCustomerID = value;
+            }
         }
+
+
+       
+
+    /*public bool Find(string Email)
+    {
+        mEmail = "Hindamingmailcom";
+        return true;
     }
+
+    public bool Find(object customerActive)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Find(object date)
+    {
+        throw new NotImplementedException();
+    }
+    */
 }
+
+
 
