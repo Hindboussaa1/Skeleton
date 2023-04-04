@@ -27,24 +27,68 @@ namespace ClassLibrary
         }
 
 
-       
+        public string Email
+        {
+            get
+            {
+                return mEmail;
+            }
 
-    /*public bool Find(string Email)
-    {
-        mEmail = "Hindamingmailcom";
-        return true;
+            set
+            {
+                mEmail = value;
+            }
+        }
+        //public int Phone { get; set; }
+        public string Address
+        {
+            get
+            {
+                return mAddress;
+            }
+            set
+            {
+                mAddress = value;
+            }
+        }
+
+        public DateTime Date
+        {
+            get
+            {
+                return mDate;
+            }
+            set
+            {
+                mDate = value;
+            }
+        }
+
+        public bool CustomerActive
+        {
+            get
+            {
+                return mCustomerActive;
+
+            }
+
+
+            set
+            {
+                mCustomerActive = value;
+            }
+        }
+
+        public bool Find(int CustomerID)
+        {
+            int mCustomerID = 9;
+            string mEmail = "Hindamingmailcom";
+            return true;
+        }
+
     }
 
-    public bool Find(object customerActive)
-    {
-        throw new NotImplementedException();
-    }
-
-    public bool Find(object date)
-    {
-        throw new NotImplementedException();
-    }
-    */
+   
 }
 
 
