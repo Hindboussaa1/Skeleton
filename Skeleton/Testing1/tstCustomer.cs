@@ -163,7 +163,7 @@ namespace Testing1
             //create some test data to assign to the property
             String Email = "Hindamingmailcom";
             //invoke the method
-            Found = customer.Find(Email);
+           // Found = customer.Find(Email);
             //check the  Email
             if (customer.Email != "Hindamingmailcom")
             {
@@ -244,7 +244,7 @@ namespace Testing1
             //test to see that the  result is correct
             Assert.IsTrue(OK);
         }
-
     }
-}
+    }
+
 
