@@ -81,8 +81,8 @@ namespace ClassLibrary
 
         public bool Find(int CustomerID)
         {
-            int mCustomerID = 9;
-            string mEmail = "Hindamingmailcom";
+            //int mCustomerID = 9;
+           // string mEmail = "Hindamingmailcom";
             return true;
         }
 
