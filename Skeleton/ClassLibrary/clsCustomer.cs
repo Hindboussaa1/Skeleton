@@ -91,7 +91,7 @@ namespace ClassLibrary
             //create an instance of the data connection
             clsDataConnection DB = new clsDataConnection();
             //add the parameter for the address no to search for
-            DB.addParameter("@CustomerID", CustomerID);
+            DB.AddParameter("@CustomerID", CustomerID);
             //execute the stored prosedure
             DB.Execute("sproc_tblAddress_FilterByAddressNo");
             //ifone record is found (there should be either one or zero!)
