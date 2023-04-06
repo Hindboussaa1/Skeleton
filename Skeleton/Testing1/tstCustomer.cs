@@ -161,9 +161,10 @@ namespace Testing1
             //boolean variable to record if data is ok
             Boolean OK = true;
             //create some test data to assign to the property
-            String Email = "Hindamingmailcom";
+            int CustomerID = 2;
+            //String Email = "Hindamingmailcom";
             //invoke the method
-           // Found = customer.Find(Email);
+           Found = customer.Find(CustomerID);
             //check the  Email
             if (customer.Email != "Hindamingmailcom")
             {
@@ -185,18 +186,18 @@ namespace Testing1
             //boolean variable to record if data is ok
             Boolean OK = true;
             //create some test data to assign to the property
-            String Address = "43tavistock";
+            int CustomerID = 2;
+           // String Address = "43tavistock";
             //invoke the method
-            Found = customer.Find(Address);
+            Found = customer.Find(CustomerID);
             //check the   Address
-            if (customer.Address != "43tavistock")
+            if (customer.Address != "tavistock")
             {
                 OK = false;
             }
             //test to see that the  result is correct
             Assert.IsTrue(OK);
         }
-
 
 
 
@@ -210,11 +211,13 @@ namespace Testing1
             //boolean variable to record if data is ok
             Boolean OK = true;
             //create some test data to assign to the property
-            DateTime TestData = DateTime.Now.Date;
+            int CustomerID = 2;
+
+            //DateTime TestData = DateTime.Now.Date;
             //invoke the method
-            Found = customer.Find(Date);
+            Found = customer.Find(CustomerID);
             //check the   Address
-            if (customer.Date != DateTime.Now.Date) ;
+            if (customer.Date != DateTime) ;
             {
                 OK = false;
             }
@@ -233,11 +236,13 @@ namespace Testing1
             //boolean variable to record if CustomerActive is  ok
             Boolean OK = true;
             //create some test data to assign to the property
-            Boolean CustomerActive = true;
+            int CustomerID = 2;
+
+            //Boolean CustomerActive = true;
             //invoke the method
-            Found = customer.Find(CustomerActive);
+            Found = customer.Find(CustomerID);
             //check the  CustomerActive
-            if (customer.CustomerActive != true) ;
+            if (customer.CustomerActive != true)
             {
                 OK = false;
             }
