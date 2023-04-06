@@ -217,7 +217,7 @@ namespace Testing1
             //invoke the method
             Found = customer.Find(CustomerID);
             //check the   Address
-            if (customer.Date != DateTime) ;
+            if (customer.Date != DateTime.Now) ;
             {
                 OK = false;
             }
