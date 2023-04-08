@@ -35,6 +35,7 @@
         <asp:CheckBox ID="chkActive" runat="server" style="z-index: 1; left: 295px; top: 379px; position: absolute" Text="Active" CssClass="auto-style2" height="29px" width="190px" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 54px; top: 442px; position: absolute"></asp:Label>
         </div>
+        <asp:Button runat="server" OnClick="Button1_Click" style="z-index: 1; left: 583px; top: 125px; position: absolute; height: 34px; width: 147px" Text="Find " />
     </form>
 </body>
 </html>

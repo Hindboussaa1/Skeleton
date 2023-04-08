@@ -24,4 +24,30 @@ public partial class _1_DataEntry : System.Web.UI.Page
         //navigate to the viewr page
         Response.Redirect("CustomerViewer.aspx");
     }
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        // create  a new instance of clsCustomer
+        clsCustomer Customer =new clsCustomer();
+        //variable to store the primary key
+        Int32 CustomerID;
+        //variable to store the result of the find operation
+        Boolean Found = false;
+        //get the primary key entred by the user
+        CustomerID = Convert.ToInt32(txtCustomerID.Text);
+        //find the record
+        Found = CustomerID.Find(CustomerID);
+        //if found
+        if (Found == true)
+        {
+            //display the values of the properties in the form
+            txtName.Text = CustomerID.Name;
+            txtEmail.Text = CustomerID.Email;
+            txtDate.Text = CustomerID.Date;
+            txtAddress.Text = CustomerID.Address;
+            txtCustomerActive.Text = CustomerID.CustomerActive;
+
+        }
+    
+    }
 }
