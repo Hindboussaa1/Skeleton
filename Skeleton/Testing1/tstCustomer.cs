@@ -120,7 +120,7 @@ namespace Testing1
             //Boolean variable to store the results of the validation 
             Boolean found = false;
             //create some test data to assign to the property
-            Int32 CustomerID = 3;
+            Int32 CustomerID = 9;
             //invoke the method
             found = customer.Find(CustomerID);
             //test to see that the two values are the same
@@ -161,7 +161,7 @@ namespace Testing1
             //boolean variable to record if data is ok
             Boolean OK = true;
             //create some test data to assign to the property
-            int CustomerID = 2;
+            int CustomerID = 124;
             //String Email = "Hindamingmailcom";
             //invoke the method
            Found = customer.Find(CustomerID);
@@ -186,7 +186,7 @@ namespace Testing1
             //boolean variable to record if data is ok
             Boolean OK = true;
             //create some test data to assign to the property
-            int CustomerID = 2;
+            int CustomerID = 124;
            // String Address = "43tavistock";
             //invoke the method
             Found = customer.Find(CustomerID);
@@ -211,7 +211,7 @@ namespace Testing1
             //boolean variable to record if data is ok
             Boolean OK = true;
             //create some test data to assign to the property
-            int CustomerID = 2;
+            int CustomerID = 9;
 
             //DateTime TestData = DateTime.Now.Date;
             //invoke the method
@@ -236,7 +236,7 @@ namespace Testing1
             //boolean variable to record if CustomerActive is  ok
             Boolean OK = true;
             //create some test data to assign to the property
-            int CustomerID = 2;
+            int CustomerID = 9;
 
             //Boolean CustomerActive = true;
             //invoke the method

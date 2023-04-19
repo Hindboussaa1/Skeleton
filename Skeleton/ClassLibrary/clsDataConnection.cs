@@ -33,9 +33,12 @@ public class clsDataConnection
 
     private string GetConnectionString()
     {
-        System.Net.WebClient client = new System.Net.WebClient();
-        string downloadString = client.DownloadString("http://localhost:5000/");
-        return downloadString;
+        //System.Net.WebClient client = new System.Net.WebClient();
+        //client.Credentials = new System.Net.NetworkCredential("P2677680", "Israamin88", "lec-admin.dmu.ac.uk");
+        //string downloadString = client.DownloadString("http://v00egd00001l.p2677680/");
+
+        String conn = "Data Source = v00egd00001l.lec-admin.dmu.ac.uk; Initial Catalog = p2677680; Persist Security Info = True; User ID = P2677680; Password = Israamin88";
+        return conn;
     }
 
     public string GetDBName()
