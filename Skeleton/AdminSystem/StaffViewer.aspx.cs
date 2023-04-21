@@ -12,6 +12,7 @@ public partial class _1Viewer : System.Web.UI.Page
     {
         clsStaff aStaff = new clsStaff();
         aStaff = (clsStaff)Session["aStaff"];
-        Response.Write(aStaff.StaffId);
+        Response.Write(aStaff.StaffFullName);
+        
     }
 }

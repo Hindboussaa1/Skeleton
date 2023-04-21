@@ -57,5 +57,13 @@ namespace Testing3
             aStaff.StaffEmail = TestData;
             Assert.AreEqual(aStaff.StaffEmail, TestData);
         }
+        public void FindMethodOK()
+        {
+            clsStaff aStaff = new clsStaff();
+            Boolean Found = false;
+            Int32 StaffID = 21;
+            Found = aStaff.Find(StaffID);
+            Assert.IsTrue(Found);
+        }
     }
 }
