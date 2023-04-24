@@ -17,6 +17,16 @@ public partial class CustomerViewer : System.Web.UI.Page
         // display the name for this entry
        // Label_Customer_Name.Text = "Customer Name: " + customer1.Name;
         Response.Write(customer1.Name);
+        Response.Write(customer1.CustomerID);
+        Response.Write(customer1.Address);
+        Response.Write(customer1.Email);
+        Response.Write(customer1.Date);
+        Response.Write(customer1.CustomerActive);
+
+
+
+
+
 
 
     }

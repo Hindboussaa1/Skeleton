@@ -19,6 +19,7 @@
         <div class="auto-style1">
         <div>
         </div>
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ShowMessageBox="true" ValidationGroup="InputValidation" />
         <asp:Label ID="Label1" runat="server" style="z-index: 1; left: 59px; top: 377px; position: absolute; width: 190px;" Text="CustomerActive" BackColor="#D5AAFF" BorderColor="#838383" BorderStyle="Inset" CssClass="auto-style2" height="29px"></asp:Label>
         <asp:Label ID="Label2" runat="server" style="z-index: 1; left: 57px; top: 328px; position: absolute; width: 190px;" Text="Address" BackColor="#D5AAFF" BorderColor="#838383" BorderStyle="Inset" CssClass="auto-style2" height="29px"></asp:Label>
         <asp:Label ID="Label3" runat="server" style="z-index: 1; left: 60px; top: 167px; position: absolute; width: 190px;" Text="Name" BackColor="#D5AAFF" BorderColor="#838383" BorderStyle="Inset" CssClass="auto-style2" height="29px"></asp:Label>
@@ -35,6 +36,7 @@
         <asp:CheckBox ID="chkActive" runat="server" style="z-index: 1; left: 295px; top: 379px; position: absolute" Text="Active" CssClass="auto-style2" height="29px" width="190px" />
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 54px; top: 442px; position: absolute"></asp:Label>
         </div>
+        <asp:Button ID="btnFind" runat="server" OnClick="Button1_Click" style="z-index: 1; left: 561px; top: 117px; position: absolute" Text="Find" />
     </form>
 </body>
 </html>
