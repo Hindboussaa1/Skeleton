@@ -1,6 +1,7 @@
 ﻿using ClassLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace Testing1
 {
@@ -41,8 +42,8 @@ namespace Testing1
             //test to see that the two values are the same
             Assert.AreEqual(customer.CustomerID, TestData);
         }
-
-        /* [TestMethod]
+        /*
+         [TestMethod]
          public void NameOk()
          {
              //create an instance of the class we want to create
@@ -50,12 +51,12 @@ namespace Testing1
              //create some test data to assign to the property
              int TestData = 9;
              //assign the data to the property
-             customer.Name = TestData;
+             customer.Name = TestDat;
              //test to see that the two values are the same
              Assert.AreEqual(customer.Name, TestData);
          }
+        
         */
-
 
 
         [TestMethod]
@@ -249,7 +250,180 @@ namespace Testing1
             //test to see that the  result is correct
             Assert.IsTrue(OK);
         }
+        private CustomerCollection mCustomerCollection;
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            // Create a new instance of CustomerCollection for each test method
+            mCustomerCollection = new CustomerCollection();
+        }
+
+        [TestMethod]
+        public void TestAddCustomer()
+        {
+            // Arrange
+            clsCustomer customer = new clsCustomer();
+            customer.CustomerID = 15;
+            customer.Email = "test@example.com";
+            customer.CustomerActive = true;
+            customer.Address="3 tavistock road";
+            customer.Name = "dina";
+            customer.Date = DateTime.Now;
+            
+            // Act
+            mCustomerCollection.AddCustomer(customer);
+       
+            // Assert
+            Assert.AreEqual(1, mCustomerCollection.CustomerList.Count);
+           
+        }
+        public void TestAdd()
+        {
+            // Arrange
+            clsCustomerCollection cs = new clsCustomerCollection();
+            clsCustomer customer = new clsCustomer();
+            customer.CustomerID = 18;
+            customer.Email = "test@example.com";
+            customer.CustomerActive = true;
+            customer.Address="3 tavistock road";
+            customer.Name = "dina";
+            customer.Date = DateTime.Now;
+            
+            // Act
+           cs.add(customer);
+       
+            // Assert
+            Assert.AreEqual(cs.customerCollection.Count(),cs.customerCollection.Count());
+            
+        }
+
+        [TestMethod]
+        public void TestRemoveCustomer()
+        {
+            // Arrange
+            clsCustomer customer1 = new clsCustomer();
+            customer1.CustomerID = 1;
+            customer1.Email = "test1@example.com";
+            customer1.CustomerActive = true;
+
+            clsCustomer customer2 = new clsCustomer();
+            customer2.CustomerID = 2;
+            customer2.Email = "test2@example.com";
+            customer2.CustomerActive = true;
+
+            mCustomerCollection.AddCustomer(customer1);
+            mCustomerCollection.AddCustomer(customer2);
+
+            // Act
+            mCustomerCollection.RemoveCustomer(customer1);
+
+            // Assert
+            Assert.AreEqual(1, mCustomerCollection.CustomerList.Count);
+            Assert.IsNull(mCustomerCollection.FindCustomerByID(1));
+            Assert.AreEqual(customer2, mCustomerCollection.FindCustomerByID(2));
+        }
+        [TestMethod]
+        public void testupdate()
+        {
+            // Arrange
+            clsCustomerCollection cs = new clsCustomerCollection();
+            clsCustomer customer = new clsCustomer();
+            customer.CustomerID = 12;
+            customer.Email = "test@hmail.com";
+            customer.CustomerActive = true;
+            customer.Address = "3 tavistock road";
+            customer.Name = "dina";
+            customer.Date = DateTime.Now;
+
+            // Act
+            cs.update(customer);
+
+            // Assert
+            Assert.AreEqual(cs.customerCollection.FindCustomersByEmail("test@hmail.com"), cs.customerCollection.FindCustomersByEmail("test@hmail.com"));
+
+
+        }
+        [TestMethod]
+        public void TestFindCustomerByID()
+        {
+            // Arrange
+            clsCustomer customer1 = new clsCustomer();
+            customer1.CustomerID = 1;
+            customer1.Email = "test1@example.com";
+            customer1.CustomerActive = true;
+
+            clsCustomer customer2 = new clsCustomer();
+            customer2.CustomerID = 2;
+            customer2.Email = "test2@example.com";
+            customer2.CustomerActive = true;
+
+            mCustomerCollection.AddCustomer(customer1);
+            mCustomerCollection.AddCustomer(customer2);
+
+            // Act
+            clsCustomer foundCustomer = mCustomerCollection.FindCustomerByID(2);
+
+            // Assert
+            Assert.AreEqual(customer2, foundCustomer);
+        }
+
+        [TestMethod]
+        public void TestFindCustomersByEmail()
+        {
+            // Arrange
+            clsCustomer customer1 = new clsCustomer();
+            customer1.CustomerID = 1;
+            customer1.Email = "test1@example.com";
+            customer1.CustomerActive = true;
+
+            clsCustomer customer2 = new clsCustomer();
+            customer2.CustomerID = 2;
+            customer2.Email = "test2@example.com";
+            customer2.CustomerActive = true;
+
+            mCustomerCollection.AddCustomer(customer1);
+            mCustomerCollection.AddCustomer(customer2);
+
+            // Act
+            List<clsCustomer> foundCustomers = mCustomerCollection.FindCustomersByEmail("test2@example.com");
+
+            // Assert
+            Assert.AreEqual(1, foundCustomers.Count);
+            Assert.AreEqual(customer2, foundCustomers[0]);
+        }
+        [TestMethod]
+        public void countPropertyok()
+        {
+            clsCustomerCollection customer = new clsCustomerCollection();
+            Int32 sum_count = 6;
+            customer.get_customer();
+            int count = customer.customerCollection.CustomerList.Count;
+            Assert.AreEqual(count, count);
+        }
+        [TestMethod]
+        public void Listandcoutok()
+        {
+            clsCustomerCollection customer = new clsCustomerCollection();
+            List<clsCustomer> test = new List<clsCustomer>();
+            clsCustomer testcustomer = new clsCustomer();
+            testcustomer.Name = "dina";
+            testcustomer.Email = "dina@gmail.com";
+            testcustomer.Address = " 4 mayfloyer road";
+            testcustomer.Date = DateTime.Now;
+            testcustomer.CustomerActive = true;
+            testcustomer.CustomerID = 8;
+            test.Add(testcustomer);
+            mCustomerCollection.CustomerList.Clear();
+            mCustomerCollection.CustomerList.Add(testcustomer);
+            Assert.AreEqual(mCustomerCollection.CustomerList.Count, test.Count);
+            
+
+
+
+
+        }
     }
+
     }
 
 
