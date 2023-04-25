@@ -41,6 +41,8 @@ public partial class _1_DataEntry : System.Web.UI.Page
             customer1.Email = Email;
             customer1.CustomerActive = check;
             customer1.Date = Date;
+            clsCustomerCollection cs = new clsCustomerCollection();
+            cs.add(customer1);
             //store  customer in the session object
             Session["Customer"] = customer1;
             //navigate to the viewr page
@@ -49,8 +51,31 @@ public partial class _1_DataEntry : System.Web.UI.Page
     }
 
     protected void Button1_Click(object sender, EventArgs e)
-    {
+    {/*
+      * private string txtName;
+    private int CustomerID;//textbox3
+    private string Address;//1
+    private string Email;//5
 
+    private DateTime Date;// 4
+    private bool check = false;//chkActive
+      */
+
+        if (!string.IsNullOrEmpty(TextBox3.Text))
+        {
+            CustomerID = int.Parse(TextBox3.Text);
+            clsCustomerCollection find = new clsCustomerCollection();
+            clsCustomer customer = find.find(CustomerID);
+            if(customer!=null)
+            {
+                TextBox2.Text = customer.Name;
+                TextBox3.Text = customer.CustomerID.ToString();
+                TextBox1.Text = customer.Address;
+                TextBox5.Text = customer.Email;
+                chkActive.Enabled = customer.CustomerActive;
+
+            }
+        }
     }
 
     protected void Page_Load(object sender, EventArgs e)
@@ -107,5 +132,33 @@ public partial class _1_DataEntry : System.Web.UI.Page
         }
 
         return isValid;
+    }
+
+    protected void Button1_Click1(object sender, EventArgs e)
+    {
+        if (ValidateInput())
+        {
+            txtName = TextBox2.Text;
+
+            CustomerID = int.Parse(TextBox3.Text);
+            Address = TextBox1.Text;
+            Email = TextBox5.Text;
+            check = chkActive.Checked;
+            Date = DateTime.Parse(TextBox4.Text);
+
+            // create  a new instance of clsCustomer
+            clsCustomer customer1 = new clsCustomer();
+            //capture the Name
+            customer1.Name = txtName;
+            customer1.CustomerID = CustomerID;
+            customer1.Address = Address;
+            customer1.Email = Email;
+            customer1.CustomerActive = check;
+            customer1.Date = Date;
+            clsCustomerCollection cs = new clsCustomerCollection();
+            cs.add(customer1);
+           
+            
+        }
     }
 }
