@@ -43,6 +43,7 @@ namespace ClassLibrary
                 customerCollection.AddCustomer(customer);
              */
             DB.AddParameter("@IdCustomerID", customer.CustomerID);
+            DB.AddParameter("@Name", customer.Name);
             DB.AddParameter("@Email", customer.Email);
             DB.AddParameter("@Date", 1);
             DB.AddParameter("@CustomerActive", customer.CustomerActive);
@@ -199,7 +200,7 @@ namespace ClassLibrary
             // execute the stored procedure
             DB.Execute("sproc_tblCustomer_FilterByCustomerID");
             // if one record is found (there should be either one or zero!)
-            clsCustomer customer=new clsCustomer();
+            clsCustomer customer = new clsCustomer();
             if (DB.Count == 1)
             {
                 // copy the data from the database to the private data members
@@ -219,8 +220,41 @@ namespace ClassLibrary
                 return null;
             }
         }
+        public void delete(int CustomerID)
+        {
+            clsDataConnection DB = new clsDataConnection();
+            // add the parameter for the customer ID to search for
+            DB.AddParameter("@CustomerID", CustomerID);
+            // execute the stored procedure
+            DB.Execute("DeleteCustomer");
+            
+        }
+        public CustomerCollection GetCustomer()
+        {
+            clsDataConnection DB = new clsDataConnection();
+            // add the parameter for the customer ID to search for
+            CustomerCollection list = new CustomerCollection();
+            // execute the stored procedure
+            DB.Execute("GetAllCustomers");
+            // if one record is found (there should be either one or zero!)
+
+            for(int i = 0;i<DB.Count;i++) { 
+                clsCustomer customer = new clsCustomer();
+            // copy the data from the database to the private data members
+            customer.CustomerID = Convert.ToInt32(DB.DataTable.Rows[i]["IdCustomerID "]);
+                customer.Name = Convert.ToString(DB.DataTable.Rows[i]["Name"]);
+                customer.Email = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                // mDate = Convert.ToDateTime(DB.DataTable.Rows[0]["Date"]);
+                customer.CustomerActive = Convert.ToBoolean(DB.DataTable.Rows[i]["CustomerActive"]);
+                customer.Address = Convert.ToString(DB.DataTable.Rows[i]["Address"]);
+                // return that everything worked ok
+                list.AddCustomer(customer);
+               
+            }
+            return list;
+        }
     }
 
-    }
+}
 
 
