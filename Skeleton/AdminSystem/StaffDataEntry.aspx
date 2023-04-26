@@ -11,6 +11,7 @@
         <div style="height: 440px">
             <asp:Label ID="lblStaffId" runat="server" Text="StaffId" width="63px"></asp:Label>
 &nbsp;<asp:TextBox ID="txtStaffId" runat="server"></asp:TextBox>
+            <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
             <br />
             <asp:Label ID="lblStaffFullName" runat="server" Text="Full Name"></asp:Label>
 &nbsp;<asp:TextBox ID="txtStaffFullName" runat="server"></asp:TextBox>
@@ -33,7 +34,6 @@
             <br />
             <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" />
 &nbsp;<asp:Button ID="btnCancel" runat="server" Text="Cancel" />
-            <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
         </div>
     </form>
 </body>

@@ -17,14 +17,29 @@ public partial class _1_DataEntry : System.Web.UI.Page
     {
         clsStaff aStaff = new clsStaff();
         //id
-        aStaff.StaffId = Convert.ToInt32(txtStaffId.Text);
-        aStaff.StaffFullName = txtStaffFullName.Text;
-        aStaff.StaffRole = txtStaffRole.Text;
-        aStaff.DateAdded = Convert.ToDateTime(txtStaffStartDate);
-        aStaff.Active = chkAvailable.Checked;
-        aStaff.StaffEmail = txtStaffEmail.Text;
-        Session["aStaff"] = aStaff;
-        Response.Redirect("StaffViewer.aspx");
+        string StaffId = txtStaffId.Text;
+        string FullName = txtStaffFullName.Text;
+        string Role = txtStaffRole.Text;
+        string DateAdded = txtStaffStartDate.Text;
+        bool Active = chkAvailable.Checked;
+        string Email = txtStaffEmail.Text;
+        string Error = "";
+        Error = aStaff.Valid(Role, Email, DateAdded, Active, FullName);
+        if (Error == "")
+        {
+            aStaff.StaffId = Convert.ToInt32(StaffId);
+            aStaff.StaffEmail = Email;
+            aStaff.StaffRole = Role;
+            aStaff.DateAdded = Convert.ToDateTime(DateAdded);
+            aStaff.StaffFullName = FullName;
+            aStaff.Active = chkAvailable.Checked;
+            Session["aStaff"] = aStaff;
+            Response.Write("StaffViewer.aspx");
+        }
+        else
+        {
+            lblError.Text = Error;
+        }
 
     }
 
