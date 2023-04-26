@@ -9,11 +9,25 @@ namespace ClassLibrary
         private int mCustomerID;
         private string mEmail;
         private string mAddress;
+        private string mName;
+
         private DateTime mDate;
+      
+
         private bool mCustomerActive;
 
         public string Name { get; set; }
-
+        public DateTime Date
+        {
+            get
+            {
+                return mDate;
+            }
+            set
+            {
+                mDate = value;
+            }
+        }
         public int CustomerID
         {
             get { return mCustomerID; }
@@ -32,11 +46,7 @@ namespace ClassLibrary
             set { mAddress = value; }
         }
 
-        public DateTime Date
-        {
-            get { return mDate; }
-            set { mDate = value; }
-        }
+       
 
         public bool CustomerActive
         {
@@ -54,7 +64,7 @@ namespace ClassLibrary
             DB.Execute("sproc_tblCustomer_FilterByCustomerID");
             // if one record is found (there should be either one or zero!)
             if (DB.Count == 1)
-            { 
+            {
                 // copy the data from the database to the private data members
                 mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["IdCustomerID "]);
                 mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
@@ -71,7 +81,67 @@ namespace ClassLibrary
                 return false;
             }
         }
+    public  String Valid(int CustomerID, String Name ,String  DateChecked, string Address, string Email, bool CustomerActive)
+    {
+        String Error = "";
+        DateTime DateTemp;
+        if (Address.Length == 0)
+        {
+            Error = Error + "The Address may not be blank : ";
+
+        }
+        if (Address.Length > 100)
+        {
+            Error = Error + "Address must be no longer than 100 characters: ";
+
+        }
+
+        if (Name.Length == 0)
+        {
+            Error = Error + "NAme may not be blank : ";
+
+        }
+        if (Name.Length > 100)
+        {
+            Error = Error + "Name must be no longer than 100 characters: ";
+
+        }
+
+        if (Email.Length == 0)
+        {
+            Error = Error + "The email may not be blank : ";
+
+        }
+        if (Email.Length > 100)
+        {
+            Error = Error + "The email must be no longer than 100 characters: ";
+
+        }
+        try
+        {
+            DateTemp = Convert.ToDateTime(DateChecked);
+            if (DateTemp < DateTime.Now.Date)
+            {
+                Error = Error + "The date cannot be in the past: ";
+
+            }
+            if (DateTemp > DateTime.Now.Date)
+            {
+                Error = Error + "The date cannot be in the future: ";
+            }
+
+        }
+        catch
+        {
+            Error = Error + "The date was not a valid date: ";
+        }
+
+
+        return Error;
     }
 }
+    }
+
+
 
 
