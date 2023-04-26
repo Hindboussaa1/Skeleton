@@ -96,5 +96,61 @@ namespace ClassLibrary
                 return false;
             }
         }
+
+        public string Valid(string role, string email, string dateAdded, bool active, string fullName)
+        {
+            String Error = "";
+            DateTime DateTemp;
+            if (fullName.Length == 0)
+            {
+                Error = Error + "The fullname may not be blank : ";
+
+            }
+            if (fullName.Length > 499)
+            {
+                Error = Error + "The fullname must be no longer than 499 characters: ";
+
+            }
+            if (role.Length == 0)
+            {
+                Error = Error + "The role may not be blank : ";
+
+            }
+            if (role.Length > 499)
+            {
+                Error = Error + "The role must be no longer than 499 characters: ";
+
+            }
+            if (email.Length == 0)
+            {
+                Error = Error + "The email may not be blank : ";
+
+            }
+            if (email.Length > 499)
+            {
+                Error = Error + "The email must be no longer than 499 characters: ";
+
+            }
+            try
+            {
+                DateTemp = Convert.ToDateTime(dateAdded);
+                if (DateTemp < DateTime.Now.Date)
+                {
+                    Error = Error + "The date cannot be in the past: ";
+
+                }
+                if (DateTemp > DateTime.Now.Date)
+                {
+                    Error = Error + "The date cannot be in the future: ";
+                }
+
+            } catch
+            {
+                Error = Error + "The date was not a valid date: ";
+            }
+            
+            
+            return Error;
+        }
     }
 }
