@@ -84,6 +84,28 @@ namespace Testing3
             AllStaff.ThisStaff.Find(PrimaryKey);
             Assert.AreEqual(AllStaff.ThisStaff, TestItem);
         }
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            clsStaffCollection AllStaff = new clsStaffCollection();
+            clsStaff TestItem = new clsStaff();
+            Int32 PrimaryKey = 0;
+            TestItem.Active = true;
+            TestItem.DateAdded = DateTime.Now.Date;
+            TestItem.StaffEmail = "mail";
+            TestItem.StaffFullName = "name";
+            TestItem.StaffRole = "role";
+            AllStaff.ThisStaff = TestItem;
+            PrimaryKey = AllStaff.Add();
+            TestItem.StaffId = PrimaryKey;
+            TestItem.Active = false;
+            TestItem.DateAdded = DateTime.Now.Date;
+            TestItem.StaffEmail = "another mail";
+            TestItem.StaffFullName = "another name lol";
+            TestItem.StaffRole = "and another role";
+            AllStaff.ThisStaff.Find(PrimaryKey);
+            Assert.AreEqual(AllStaff.ThisStaff, TestItem);
+        }
         
     }
 
