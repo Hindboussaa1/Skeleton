@@ -244,7 +244,7 @@ namespace ClassLibrary
             customer.CustomerID = Convert.ToInt32(DB.DataTable.Rows[i]["IdCustomerID "]);
                 customer.Name = Convert.ToString(DB.DataTable.Rows[i]["Name"]);
                 customer.Email = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
-                // mDate = Convert.ToDateTime(DB.DataTable.Rows[0]["Date"]);
+                //mDate = Convert.ToDateTime(DB.DataTable.Rows[0]["Date"]);
                 customer.CustomerActive = Convert.ToBoolean(DB.DataTable.Rows[i]["CustomerActive"]);
                 customer.Address = Convert.ToString(DB.DataTable.Rows[i]["Address"]);
                 // return that everything worked ok

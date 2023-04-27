@@ -10,17 +10,12 @@ namespace Testing1
     {
         
 
-       /* public string Address { get; private set; }
-        public string Email { get; private set; }
-        public int CustomerID { get; private set; }
-        public String Name { get; private set; }
-      */
         public bool Found { get; private set; }
         string Name = "sana";
         string Address = "myflower road";
         string Email = "dina@gmail.com";
         bool CustomerActive = true;
-         public DateTime Date  = DateTime.Now.Date;
+        public DateTime Date  = DateTime.Now.Date;
         int CustomerID = 3;
 
 
@@ -45,7 +40,7 @@ namespace Testing1
             //test to see that the two values are the same
             Assert.AreEqual(customer.CustomerID, TestData);
         }
-        /*
+       /*
          [TestMethod]
          public void NameOk()
          {
@@ -53,13 +48,13 @@ namespace Testing1
              clsCustomer customer = new clsCustomer();
              //create some test data to assign to the property
              int TestData = 9;
-             //assign the data to the property
-             customer.Name = TestDat;
+            //assign the data to the property
+           // customer.Name =TestData;
              //test to see that the two values are the same
              Assert.AreEqual(customer.Name, TestData);
          }
-        
         */
+       
 
 
         [TestMethod]
