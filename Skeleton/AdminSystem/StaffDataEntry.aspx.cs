@@ -25,7 +25,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
     {
         clsStaff aStaff = new clsStaff();
         //id
-        string StaffId = txtStaffId.Text;
+        string StaffID = txtStaffId.Text;
         string FullName = txtStaffFullName.Text;
         string Role = txtStaffRole.Text;
         string DateAdded = txtStaffStartDate.Text;
@@ -35,15 +35,24 @@ public partial class _1_DataEntry : System.Web.UI.Page
         Error = aStaff.Valid(Role, Email, DateAdded, Active, FullName);
         if (Error == "")
         {
-            aStaff.StaffId = Convert.ToInt32(StaffId);
+            aStaff.StaffId = StaffId;
             aStaff.StaffEmail = Email;
             aStaff.StaffRole = Role;
             aStaff.DateAdded = Convert.ToDateTime(DateAdded);
             aStaff.StaffFullName = FullName;
             aStaff.Active = chkAvailable.Checked;
             clsStaffCollection StaffList = new clsStaffCollection();
-            StaffList.ThisStaff = aStaff;
-            StaffList.Add();
+            if (StaffId == -1)
+            {
+                StaffList.ThisStaff = aStaff;
+                StaffList.Add();
+            }
+            else
+            {
+                StaffList.ThisStaff.Find(StaffId);
+                StaffList.ThisStaff = aStaff;
+                StaffList.Update();
+            }
             Response.Redirect("StaffList.aspx");
         }
         else
@@ -78,6 +87,7 @@ public partial class _1_DataEntry : System.Web.UI.Page
         txtStaffRole.Text = Staffbook.ThisStaff.StaffRole;
         txtStaffStartDate.Text = Staffbook.ThisStaff.DateAdded.ToString();
         chkAvailable.Checked = Staffbook.ThisStaff.Active;
+
         
     }
 }
