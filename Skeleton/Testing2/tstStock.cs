@@ -41,7 +41,7 @@ namespace Testing2
         [TestMethod]
         public void CarBrandOK()
         {
-            clsSstock StockManage = new clsSstock;
+            clsSstock StockManage = new clsSstock();
             string TestData = "Mercedes";
             StockManage.CarBrand = TestData;
             Assert.AreEqual(StockManage.CarBrand, TestData);
