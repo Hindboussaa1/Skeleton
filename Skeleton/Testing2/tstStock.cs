@@ -47,7 +47,7 @@ namespace Testing2
             Assert.AreEqual(StockManage.CarBrand, TestData);
         }
         [TestMethod]
-        public void CarModelOK() 
+        public void CarModelOK()
         {
             clsSstock StockManage = new clsSstock();
             string TestData = "E320";
@@ -63,7 +63,110 @@ namespace Testing2
             StockManage.CarColor = TestData;
             Assert.AreEqual(StockManage.CarColor, TestData);
         }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            clsSstock StockManage = new clsSstock();
+            Boolean Found = false;
+            Int32 CarID = 2;
+            Found = StockManage.Find(CarID);
+        }
+        [TestMethod]
+        public void TestCarIDNoFound()
+        {
+            clsSstock StockManage = new clsSstock();
+            Boolean Found = false;
+
+            Boolean OK = true;
+            Int32 CarID = 2;
+            Found = StockManage.Find(CarID);
+            if (StockManage.CarId != 2)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+        [TestMethod]
+        public void TestCarBrandNoFound()
+        {
+            clsSstock StockManage = new clsSstock();
+            Boolean Found = false;
+
+            Boolean OK = true;
+            Int32 CarID = 2;
+            Found = StockManage.Find(CarID);
+            if (StockManage.CarBrand != "Test Car Brand")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCarColorNoFound()
+        {
+            clsSstock StockManage = new clsSstock();
+            Boolean Found = false;
+
+            Boolean OK = true;
+            Int32 CarID = 2;
+            Found = StockManage.Find(CarID);
+            if (StockManage.CarColor != "Test Car Color")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCarModelNoFound()
+        {
+            clsSstock StockManage = new clsSstock();
+            Boolean Found = false;
+
+            Boolean OK = true;
+            Int32 CarID = 2;
+            Found = StockManage.Find(CarID);
+            if (StockManage.CarModel != "Test Car Model")
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+        }
+            [TestMethod]
+            public void TestCarYearNoFound()
+            {
+                clsSstock StockManage = new clsSstock();
+                Boolean Found = false;
+
+                Boolean OK = true;
+                Int32 CarID = 2;
+                Found = StockManage.Find(CarID);
+                if (StockManage.DateAdded != Convert.ToDateTime("17/08/2022"))
+                {
+                    OK = false;
+                }
+                Assert.IsTrue(OK);
+
+            }
+        [TestMethod]
+        public void TestCarAvailableNoFound()
+        {
+            clsSstock StockManage = new clsSstock();
+            Boolean Found = false;
+
+            Boolean OK = true;
+            Int32 CarID = 2;
+            Found = StockManage.Find(CarID);
+            if (StockManage.Active !=  true)
+            {
+                OK = false;
+            }
+            Assert.IsTrue(OK);
+
+        }
+
+
     }
-
-
-}
+    }
