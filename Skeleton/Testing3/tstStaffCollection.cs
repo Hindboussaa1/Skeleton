@@ -106,6 +106,24 @@ namespace Testing3
             AllStaff.ThisStaff.Find(PrimaryKey);
             Assert.AreEqual(AllStaff.ThisStaff, TestItem);
         }
+        public void DeleteMethodOK()
+        {
+            clsStaffCollection AllStaff = new clsStaffCollection();
+            clsStaff TestItem = new clsStaff();
+            Int32 PrimaryKey = 0;
+            TestItem.Active = true;
+            TestItem.DateAdded = DateTime.Now.Date;
+            TestItem.StaffEmail = "mail";
+            TestItem.StaffFullName = "name";
+            TestItem.StaffRole = "role";
+            AllStaff.ThisStaff = TestItem;
+            PrimaryKey = AllStaff.Add();
+            TestItem.StaffId = PrimaryKey;
+            AllStaff.ThisStaff.Find(PrimaryKey);
+            AllStaff.Delete();
+            Boolean Found = AllStaff.ThisStaff.Find(PrimaryKey);
+            Assert.IsFalse(Found);
+        }
         
     }
 
