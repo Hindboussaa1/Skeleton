@@ -33,8 +33,10 @@ public partial class _1_DataEntry : System.Web.UI.Page
             aStaff.DateAdded = Convert.ToDateTime(DateAdded);
             aStaff.StaffFullName = FullName;
             aStaff.Active = chkAvailable.Checked;
-            Session["aStaff"] = aStaff;
-            Response.Write("StaffViewer.aspx");
+            clsStaffCollection StaffList = new clsStaffCollection();
+            StaffList.ThisStaff = aStaff;
+            StaffList.Add();
+            Response.Redirect("StaffList.aspx");
         }
         else
         {
