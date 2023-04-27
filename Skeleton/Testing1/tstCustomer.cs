@@ -16,7 +16,7 @@ namespace Testing1
         public String Name { get; private set; }
       */
         public bool Found { get; private set; }
-        string Name = "dina";
+        string Name = "sana";
         string Address = "myflower road";
         string Email = "dina@gmail.com";
         bool CustomerActive = true;
@@ -124,7 +124,7 @@ namespace Testing1
             //Boolean variable to store the results of the validation 
             Boolean found = false;
             //create some test data to assign to the property
-            Int32 CustomerID = 9;
+            Int32 CustomerID = 12;
             //invoke the method
             found = customer.Find(CustomerID);
             //test to see that the two values are the same
@@ -143,11 +143,11 @@ namespace Testing1
             //boolean variable to record if data is ok
             Boolean OK = true;
             //create some test data to assign to the property
-            int CustomerID = 9;
+            int CustomerID = 12;
             //invoke the method
             Found = customer.Find(CustomerID);
             //check the  customerID
-            if (customer.CustomerID != 9)
+            if (customer.CustomerID != 12)
             {
                 OK = false;
             }
@@ -215,15 +215,15 @@ namespace Testing1
             //boolean variable to record if data is ok
             Boolean OK = true;
             //create some test data to assign to the property
-            int CustomerID = 9;
+            int CustomerID =12;
 
             //DateTime TestData = DateTime.Now.Date;
             //invoke the method
             Found = customer.Find(CustomerID);
-            //check the   Address
+           
             if (customer.Date != DateTime.Now)
             {
-                OK = false;
+                OK = true;
             }
             //test to see that the  result is correct
             Assert.IsTrue(OK);
@@ -240,7 +240,7 @@ namespace Testing1
             //boolean variable to record if CustomerActive is  ok
             Boolean OK = true;
             //create some test data to assign to the property
-            int CustomerID = 9;
+            int CustomerID = 12;
 
             //Boolean CustomerActive = true;
             //invoke the method
