@@ -24,9 +24,7 @@
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 64px; top: 277px; position: absolute; width: 190px;" Text="Date" BackColor="#D5AAFF" BorderColor="#838383" BorderStyle="Inset" CssClass="auto-style2" height="29px"></asp:Label>
         <asp:Label ID="CustomerId" runat="server" style="z-index: 1; left: 63px; top: 116px; position: absolute; width: 190px;" Text="CustomerId" BackColor="#D5AAFF" BorderColor="#838383" BorderStyle="Inset" CssClass="auto-style2" height="29px"></asp:Label>
             <asp:Label ID="Label7" runat="server" BackColor="#D5AAFF" BorderColor="#838383" BorderStyle="Inset" CssClass="auto-style2" height="29px" style="z-index: 1; left: 63px; top: 224px; position: absolute; width: 190px" Text="Email"></asp:Label>
-        <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 139px; top: 491px; position: absolute; height: 27px; width: 86px;" Text="Ok" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="btnOK_Click" />
-        <asp:Button ID="Button1" runat="server" style="z-index: 1; top: 494px; position: absolute; height: 27px; width: 86px;" Text="Ok" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="Button1_Click1" />
-            <asp:Button ID="btnCancel" runat="server" style="z-index: 1; top: 485px; position: absolute; height: 30px; bottom: 46px; right: 844px; width: 124px;" Text="Cancel" BackColor="#DDDDDD" BorderStyle="Inset" CssClass="auto-style2" />
+        <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 139px; top: 485px; position: absolute; height: 33px; width: 86px;" Text="Ok" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="btnOK_Click" />
         <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 294px; top: 322px; position: absolute" height="29px" width="190px"></asp:TextBox>
         <asp:TextBox ID="TextBox2" runat="server" style="z-index: 1; left: 294px; top: 165px; position: absolute" CssClass="auto-style2" height="29px" width="190px"></asp:TextBox>
         <asp:TextBox ID="TextBox3" runat="server" style="z-index: 1; left: 291px; top: 116px; position: absolute; height: 29px; width: 190px;" CssClass="auto-style2"></asp:TextBox>
@@ -36,6 +34,18 @@
         <asp:Label ID="lblError" runat="server" style="z-index: 1; left: 54px; top: 442px; position: absolute"></asp:Label>
         </div>
         <asp:Button ID="btnFind" runat="server" OnClick="Button1_Click" style="z-index: 1; left: 561px; top: 117px; position: absolute" Text="Find" />
+        <p>
+            <asp:Button ID="btnCancel" runat="server" style="z-index: 1; top: 485px; position: absolute; height: 28px; bottom: 164px; right: 844px; width: 108px; left: 372px;" Text="Cancel" BackColor="#DDDDDD" BorderStyle="Inset" CssClass="auto-style2" />
+        </p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+        <asp:Button ID="Button1" runat="server" style="z-index: 1; top: 499px; position: absolute; height: 22px; width: 56px; left: 680px;" Text="Ok" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="Button1_Click1" />
+            </p>
     </form>
 </body>
 </html>
