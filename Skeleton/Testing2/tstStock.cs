@@ -516,6 +516,84 @@ namespace Testing2
             Error = StockManage.Valid(DateAdded, CarModel, CarColor, CarBrand, Active);
             Assert.AreNotEqual(Error, "");
         }
+        [TestMethod]
+        public void AddTethodOK()
+        {
+            clsStockCollection AllStock = new clsStockCollection();
+            clsSstock TestItem = new clsSstock();
 
+            Int32 PrimaryKey = 0;
+            TestItem.Active = true;
+            TestItem.CarId = 1;
+            TestItem.CarBrand = "Mercedes";
+            TestItem.CarModel = "E320";
+            TestItem.CarColor = "Black";
+            TestItem.DateAdded = DateTime.Now.Date;
+            AllStock.ThisStock = TestItem;
+            PrimaryKey = AllStock.Add();
+            TestItem.CarId = PrimaryKey;
+            Assert.AreEqual(AllStock.ThisStock, TestItem);
+        }
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            clsStockCollection AllStock = new clsStockCollection();
+            clsSstock TestItem = new clsSstock();
+            Int32 PrimaryKey = 0;
+            TestItem.Active = true;
+            TestItem.CarId = 1;
+            TestItem.CarBrand = "Mercedes";
+            TestItem.CarModel = "E320";
+            TestItem.CarColor = "Black";
+            TestItem.DateAdded = DateTime.Now.Date;
+            AllStock.ThisStock = TestItem;
+            AllStock.ThisStock = TestItem;
+            PrimaryKey = AllStock.Add();
+            AllStock.ThisStock.Find(PrimaryKey);
+            AllStock.Delete();
+            Boolean Found = AllStock.ThisStock.Find(PrimaryKey);
+            Assert.IsFalse(Found);
+
+        }
+        [TestMethod]
+        public void ReportByCarBrandOK()
+        {
+            clsStockCollection AllStock = new clsStockCollection();
+            clsStockCollection FilteredStock = new clsStockCollection();
+            FilteredStock.ReportByCarBrand("");
+            Assert.AreEqual(AllStock.Count, FilteredStock.Count);
+        }
+        
+        [TestMethod]
+        public void ReportByCarBrandNoneFound()
+        {
+            clsStockCollection FilteredStock = new clsStockCollection();
+            FilteredStock.ReportByCarBrand("Test");
+            Assert.AreEqual(0, FilteredStock.Count);
+        }
+        [TestMethod]
+        public void ReportByCarBrandTestDataFound()
+        {
+            clsStockCollection FilterStock = new clsStockCollection();
+            Boolean OK = true;
+            FilterStock.ReportByCarBrand("Some Test");
+            if (FilterStock.Count == 2)
+            {
+               
+                if (FilterStock.StockList[0].CarId != 36)
+                {
+                    OK = false;
+                }
+                if (FilterStock.StockList[1].CarId != 37)
+                {
+                    OK = false;
+                }
+                else
+                {
+                    OK = false;
+                }
+                Assert.IsTrue(OK);
+            }
+        }
     }
     }

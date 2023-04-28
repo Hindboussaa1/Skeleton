@@ -6,17 +6,27 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 public partial class _1_DataEntry : System.Web.UI.Page
 {
+    Int32 CarId;
     protected void Page_Load(object sender, EventArgs e)
     {
+        CarId = Convert.ToInt32(Session["CarId"]);
+        if (IsPostBack == false)
 
+        {
+            if (CarId != -1)
+            {
+                DisplayStock();
+                }
+        }
     }
 
     protected void btnOk_Click(object sender, EventArgs e)
     {
         clsSstock StockManage = new clsSstock();
-       
+        Int32 CarId = txtCarID.Text;
         string CarBrand = txtCarBrand.Text;
         string CarModel = txtCarModel.Text;
         string CarColor = txtCarColor.Text;
@@ -26,15 +36,28 @@ public partial class _1_DataEntry : System.Web.UI.Page
         Error = StockManage.Valid(DateAdded, CarModel, CarColor, CarBrand, Active);
         if (Error == "")
         {
-            StockManage.CarId = Convert.ToInt32(txtCarID.Text);
-            StockManage.CarBrand = txtCarBrand.Text;
-            StockManage.CarColor = txtCarColor.Text;
-            StockManage.CarModel = txtCarModel.Text;
-            StockManage.DateAdded = Convert.ToDateTime(txtCarYear.Text);
+            StockManage.CarId = CarId;
+            StockManage.CarBrand = CarBrand;
+            StockManage.CarColor = CarColor;
+            StockManage.CarModel = CarModel;
+            StockManage.DateAdded = Convert.ToDateTime(DateAdded);
             StockManage.Active = chkAvailable.Checked;
+            clsStockCollection StockList = new clsStockCollection();
 
-            Session["StockManage"] = StockManage;
-            Response.Redirect("StockViewer.aspx");
+            if(CarId == -1)
+            {
+                StockList.ThisStock = StockManage;
+                StockList.Add();
+
+            }
+            else
+            {
+                StockList.ThisStock.Find(CarId);
+                StockList.ThisStock = StockManage;
+                StockList.Update();
+            }
+           
+            Response.Redirect("StockList.aspx");
         }
 
         else
@@ -64,5 +87,16 @@ public partial class _1_DataEntry : System.Web.UI.Page
             txtCarYear.Text = StockManage.DateAdded.ToString();
             chkAvailable.Checked = StockManage.Active;
         }
+
+    }
+    void DisplayStock()
+    {
+        clsStockCollection Stock = new clsStockCollection();
+        Stock.ThisStock.Find(CarId);
+        txtCarBrand.Text = Stock.ThisStock.CarId.ToString();
+        txtCarModel.Text = Stock.ThisStock.CarModel;
+        txtCarColor.Text = Stock.ThisStock.CarColor;
+        txtCarYear.Text = Stock.ThisStock.DateAdded.ToString;
+        chkAvailable.Checked = Stock.ThisStock.Active;
     }
 }

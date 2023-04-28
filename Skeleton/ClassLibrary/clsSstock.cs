@@ -24,6 +24,12 @@ namespace ClassLibrary
                 mCarYear = value;
             }
         }
+
+        public void Find(object carID)
+        {
+            throw new NotImplementedException();
+        }
+
         public Int32 CarId {
             get
             {
@@ -92,6 +98,11 @@ namespace ClassLibrary
             //mCarBrand = "Test Car Brand"
             //mActive = true;
             //return true;
+        }
+
+        public void Find(object carId)
+        {
+            throw new NotImplementedException();
         }
 
         public string Valid(string dateAdded, string carModel, string carColor, string carBrand, bool active)
