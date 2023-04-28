@@ -40,26 +40,27 @@ namespace Testing1
             //test to see that the two values are the same
             Assert.AreEqual(customer.CustomerID, TestData);
         }
-       /*
+       
          [TestMethod]
          public void NameOk()
          {
              //create an instance of the class we want to create
              clsCustomer customer = new clsCustomer();
              //create some test data to assign to the property
-             int TestData = 9;
+             string TestData = "silma";
             //assign the data to the property
-           // customer.Name =TestData;
+            customer.Name =TestData;
              //test to see that the two values are the same
              Assert.AreEqual(customer.Name, TestData);
          }
-        */
+        
        
 
 
         [TestMethod]
         public void EmailOK()
-        {
+        {    
+
             //create an instance of the class we want to create
             clsCustomer customer = new clsCustomer();
             //create some test data to assign to the property
@@ -68,6 +69,7 @@ namespace Testing1
             customer.Email = TestData;
             //test to see that the two values are the same
             Assert.AreEqual(customer.Email, TestData);
+        
         }
 
 
@@ -588,7 +590,7 @@ namespace Testing1
         {
             clsCustomer customer = new clsCustomer();
             String Error = "";
-            string Email = "";
+            string Address = "";
             Error = customer.Valid(CustomerID, Name, Date.ToString(), Address, Email, CustomerActive);
             Assert.AreNotEqual(Error, "");
         }
@@ -597,7 +599,7 @@ namespace Testing1
         {
             clsCustomer customer = new clsCustomer();
             String Error = "";
-            string Email = "";
+            string Address = "";
             Error = customer.Valid(CustomerID, Name, Date.ToString(), Address, Email, CustomerActive);
             Assert.AreNotEqual(Error, "");
         }
@@ -606,7 +608,7 @@ namespace Testing1
         {
             clsCustomer customer = new clsCustomer();
             String Error = "";
-            string Email = "";
+            string Address = "";
             Error = customer.Valid(CustomerID, Name, Date.ToString(), Address, Email, CustomerActive);
             Assert.AreNotEqual(Error, "");
         }
@@ -615,7 +617,7 @@ namespace Testing1
         {
             clsCustomer customer = new clsCustomer();
             String Error = "";
-            string Email = "";
+            string Address = "";
             Error = customer.Valid(CustomerID, Name, Date.ToString(), Address, Email, CustomerActive);
             Assert.AreNotEqual(Error, "");
         }
@@ -624,7 +626,7 @@ namespace Testing1
         {
             clsCustomer customer = new clsCustomer();
             String Error = "";
-            string Email = "";
+            string Address = "";
             Error = customer.Valid(CustomerID, Name, Date.ToString(), Address, Email, CustomerActive);
 
             Assert.AreNotEqual(Error, "");
@@ -634,7 +636,7 @@ namespace Testing1
         {
             clsCustomer customer = new clsCustomer();
             String Error = "";
-            string Email = "";
+            string Address = "";
             Error = customer.Valid(CustomerID, Name, Date.ToString(), Address, Email, CustomerActive);
             Assert.AreNotEqual(Error, "");
         }
@@ -643,7 +645,7 @@ namespace Testing1
         {
             clsCustomer customer = new clsCustomer();
             String Error = "";
-            string Email = "";
+            string Address = "";
             Error = customer.Valid(CustomerID, Name, Date.ToString(), Address, Email, CustomerActive);
             Assert.AreNotEqual(Error, "");
         }

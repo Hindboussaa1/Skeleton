@@ -21,7 +21,6 @@
         <asp:Label ID="Label4" runat="server" style="z-index: 1; left: 64px; top: 277px; position: absolute; width: 190px;" Text="Date" BackColor="#D5AAFF" BorderColor="#838383" BorderStyle="Inset" CssClass="auto-style2" height="29px"></asp:Label>
         <asp:Label ID="CustomerId" runat="server" style="z-index: 1; left: 63px; top: 116px; position: absolute; width: 190px;" Text="CustomerId" BackColor="#D5AAFF" BorderColor="#838383" BorderStyle="Inset" CssClass="auto-style2" height="29px"></asp:Label>
             <asp:Label ID="Label7" runat="server" BackColor="#D5AAFF" BorderColor="#838383" BorderStyle="Inset" CssClass="auto-style2" height="29px" style="z-index: 1; left: 63px; top: 224px; position: absolute; width: 190px" Text="Email"></asp:Label>
-        <asp:Button ID="Button2" runat="server" style="z-index: 1; left: 538px; top: 487px; position: absolute; width: 86px;" Text="Edit" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="Button2_Click"  />
         <asp:TextBox ID="TextBox1" runat="server" style="z-index: 1; left: 294px; top: 322px; position: absolute" height="29px" width="190px"></asp:TextBox>
         <asp:TextBox ID="TextBox2" runat="server" style="z-index: 1; left: 294px; top: 165px; position: absolute" CssClass="auto-style2" height="29px" width="190px"></asp:TextBox>
         <asp:TextBox ID="TextBox3" runat="server" style="z-index: 1; left: 291px; top: 116px; position: absolute; height: 29px; width: 190px;" CssClass="auto-style2"></asp:TextBox>
@@ -34,8 +33,16 @@
                float:right;
            }
        </style>
-        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 426px; top: 490px; position: absolute; height: 27px; width: 86px;" Text="Delete" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="Button1_Click" />
-             <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 297px; top: 490px; position: absolute; height: 27px; width: 86px;" Text="ADD" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="btnOK_Click" />
+        <asp:Button ID="Button1" runat="server" style="z-index: 1; left: 59px; top: 490px; position: absolute; height: 27px; width: 86px;" Text="Delete" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="Button1_Click" />
+        <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 200px; top: 490px; position: absolute; height: 27px; width: 86px;" Text="ADD" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="btnOK_Click" />
+        <asp:Button ID="Button2" runat="server" style="z-index: 1; left: 320px; top: 490px; position: absolute;  height: 27px; width: 86px;" Text="Edit" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="Button2_Click"  />
+        
+        <asp:Label ID="Label_Postcode" runat="server" style="z-index: 1; left: 59px; top: 550px; position: absolute; width: 190px;" Text="Enter Your Address:" height="29px"></asp:Label>
+        <asp:TextBox ID="TextBox_Postcode" runat="server" style="z-index: 1; left: 200px; top: 550px; position: absolute" height="29px" width="190px"></asp:TextBox>
+
+        
+        <asp:Button ID="btnApply" runat="server" style="z-index: 1; left: 59px; top: 600px; position: absolute;  height: 27px; width: 86px;" Text="Apply" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" />
+        <asp:Button ID="btnClear_" runat="server" style="z-index: 1; left: 200px; top: 600px; position: absolute; height: 27px; width: 86px;" Text="Clear" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2"  />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" DataKeyNames="CustomerId" AutoGenerateSelectButton="true" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
     <Columns>
         <asp:BoundField HeaderText="Customer ID" DataField="CustomerId" />
