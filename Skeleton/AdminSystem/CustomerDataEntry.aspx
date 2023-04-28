@@ -44,7 +44,6 @@
         <p>
             &nbsp;</p>
         <p>
-        <asp:Button ID="Button1" runat="server" style="z-index: 1; top: 499px; position: absolute; height: 22px; width: 56px; left: 680px;" Text="Ok" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="Button1_Click1" />
             </p>
     </form>
 </body>
