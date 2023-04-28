@@ -37,8 +37,8 @@
         <asp:Button ID="btnOK" runat="server" style="z-index: 1; left: 200px; top: 490px; position: absolute; height: 27px; width: 86px;" Text="ADD" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="btnOK_Click" />
         <asp:Button ID="Button2" runat="server" style="z-index: 1; left: 320px; top: 490px; position: absolute;  height: 27px; width: 86px;" Text="Edit" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" OnClick="Button2_Click"  />
         
-        <asp:Label ID="Label_Postcode" runat="server" style="z-index: 1; left: 59px; top: 550px; position: absolute; width: 190px;" Text="Enter Your Address:" height="29px"></asp:Label>
-        <asp:TextBox ID="TextBox_Postcode" runat="server" style="z-index: 1; left: 200px; top: 550px; position: absolute" height="29px" width="190px"></asp:TextBox>
+        <asp:Label ID="Label_Postcode" runat="server" style="z-index: 1; left: 59px; top: 550px; position: absolute; width: 190px;" Text="Enter Your Postcode:" height="29px"></asp:Label>
+        <asp:TextBox ID="TextBox_Postcode" runat="server" style="z-index: 1; left: 220px; top: 550px; position: absolute" height="29px" width="190px"></asp:TextBox>
 
         
         <asp:Button ID="btnApply" runat="server" style="z-index: 1; left: 59px; top: 600px; position: absolute;  height: 27px; width: 86px;" Text="Apply" BackColor="#DDDDDD" BorderColor="#666699" CssClass="auto-style2" />
