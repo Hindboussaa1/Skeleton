@@ -41,6 +41,11 @@ public class clsDataConnection
         return conn;
     }
 
+    internal void AddParameter(int carID1, int carID2)
+    {
+        throw new NotImplementedException();
+    }
+
     public string GetDBName()
     {
 
